@@ -7,4 +7,4 @@ before_install:
 
 install:
   - FILE="-Dfile=networkutil-release.aar"
-  - mvn install:install-file $FILE -DgroupId=com.github.networkutil -DartifactId=networkutil -Dversion=1.0 -Dpackaging=aar -DgeneratePom=true
+  - mvn install:install-file $FILE -DgroupId=com.github.android717 -DartifactId=networkutil -Dversion=1.0 -Dpackaging=aar -DgeneratePom=true
