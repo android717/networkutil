@@ -1,10 +1,10 @@
 jdk:
   - openjdk17
+
 before_install:
   - chmod +x scripts/prepareJitpackEnvironment.sh
   - ./scripts/prepareJitpackEnvironment.sh
+
 install:
   - FILE="-Dfile=networkutil-release.aar"
-  - >-
-    mvn install:install-file $FILE -DgroupId=com.github.networkutil
-    -DartifactId=networkutil -Dversion=1.0 -Dpackaging=arr -DgeneratePom=true
+  - mvn install:install-file $FILE -DgroupId=com.github.networkutil -DartifactId=networkutil -Dversion=1.0 -Dpackaging=aar -DgeneratePom=true
