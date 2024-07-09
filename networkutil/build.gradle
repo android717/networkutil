@@ -9,6 +9,7 @@ android {
 
     defaultConfig {
         minSdk 24
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -44,18 +45,6 @@ dependencies {
     androidTestImplementation libs.espresso.core
 }
 
-/*publishing {
-    publications (MavenPublication){
-        groupId ='com.github.networkutil'
-        artifactId= 'networkutil'
-        version ='1.0'
-        pom{
-            description ='Network Util Class'
-        }
-
-    }
-}*/
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -63,7 +52,7 @@ publishing {
             artifactId = 'networkutil'
             version = '1.0'
 
-
+            // Publishing details
             pom {
                 description = 'Network Util Class'
                 url = 'https://github.com/android717/networkutil'
