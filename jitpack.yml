@@ -1,0 +1,7 @@
+jdk:
+  - openjdk17
+before_install:
+  - ./scripts/prepareJitpackEnvironment.sh
+install:
+  - FILE="-Dfile=networkutil-release.arr"
+  - mvn install: install-file $FILE -DgroupId=com.github.networkutil -DartifactId=networkutil -Dversgion=1.0 -Dpackaging=arr -DgeneratePom=true
