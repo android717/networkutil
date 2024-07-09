@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.androidLibrary)
+    id 'maven-publish'
 }
 
 android {
@@ -8,6 +9,8 @@ android {
 
     defaultConfig {
         minSdk 24
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -20,10 +23,17 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
 
 dependencies {
 
@@ -32,4 +42,50 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+}
+
+/*publishing {
+    publications (MavenPublication){
+        groupId ='com.github.networkutil'
+        artifactId= 'networkutil'
+        version ='1.0'
+        pom{
+            description ='Network Util Class'
+        }
+
+    }
+}*/
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId = 'com.github.networkutil'
+            artifactId = 'networkutil'
+            version = '1.0'
+
+
+            pom {
+                description = 'Network Util Class'
+                url = 'https://github.com/android717/networkutil'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'ravix'
+                        name = 'Ravix'
+                        email = 'ravi@togethring.net'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/android717/networkutil.git'
+                    developerConnection = 'scm:git:ssh://github.com/android717/networkutil.git'
+                    url = 'https://github.com/android717/networkutil'
+                }
+            }
+        }
+    }
 }
