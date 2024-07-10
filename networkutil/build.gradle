@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.androidLibrary)
+    id 'com.android.library'
     id 'maven-publish'
 }
 
@@ -9,10 +9,8 @@ android {
 
     defaultConfig {
         minSdk 24
-        targetSdk 34
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -35,27 +33,13 @@ java {
     }
 }
 
-
-dependencies {
-
-    implementation libs.appcompat
-    implementation libs.material
-    testImplementation libs.junit
-    androidTestImplementation libs.ext.junit
-    androidTestImplementation libs.espresso.core
-}
-
 publishing {
     publications {
         mavenJava(MavenPublication) {
             groupId = 'com.github.android717'
             artifactId = 'networkutil'
             version = '1.7'
-            artifact("$buildDir/outputs/aar/networkutil-release.aar") {
-                extension = "aar"
-            }
-
-            // Publishing details
+            artifact("$buildDir/outputs/aar/networkutil-release.aar")
             pom {
                 description = 'Network Util Class'
                 url = 'https://github.com/android717/networkutil'
