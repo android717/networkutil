@@ -23,16 +23,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
+
 }
 
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
 }
 
 
@@ -50,7 +52,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'com.github.android717'
             artifactId = 'networkutil'
-            version = '1.8'
+            version = '1.9'
             pom {
                 description = 'Network Util Class'
                 url = 'https://github.com/android717/networkutil'
