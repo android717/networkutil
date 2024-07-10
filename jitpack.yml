@@ -1,10 +1,6 @@
 jdk:
   - openjdk17
 
-before_install:
-  - chmod +x scripts/prepareJitpackEnvironment.sh
-  - ./scripts/prepareJitpackEnvironment.sh
-
 install:
   - FILE="-Dfile=networkutil-release.aar"
   - mvn install:install-file $FILE -DgroupId=com.github.android717 -DartifactId=networkutil -Dversion=1.2 -Dpackaging=aar -DgeneratePom=true

@@ -51,6 +51,9 @@ publishing {
             groupId = 'com.github.android717'
             artifactId = 'networkutil'
             version = '1.2'
+            artifact("$buildDir/outputs/aar/networkutil-release.aar") {
+                extension = "aar"
+            }
 
             // Publishing details
             pom {
