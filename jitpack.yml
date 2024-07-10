@@ -4,4 +4,4 @@ jdk:
 install:
   - ./gradlew clean assembleRelease
   - FILE="$PWD/build/outputs/aar/networkutil-release.aar"
-  - mvn install:install-file -Dfile=$FILE -DgroupId=com.github.android717 -DartifactId=networkutil -Dversion=1.7 -Dpackaging=aar -DgeneratePom=true
+  - mvn install:install-file -Dfile=$FILE -DgroupId=com.github.android717 -DartifactId=networkutil -Dversion=1.8 -Dpackaging=aar -DgeneratePom=true

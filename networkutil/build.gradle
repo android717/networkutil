@@ -50,8 +50,7 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = 'com.github.android717'
             artifactId = 'networkutil'
-            version = '1.7'
-            artifact("$buildDir/outputs/aar/networkutil-release.aar")
+            version = '1.8'
             pom {
                 description = 'Network Util Class'
                 url = 'https://github.com/android717/networkutil'
