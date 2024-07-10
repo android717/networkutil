@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.library'
+    alias(libs.plugins.androidLibrary)
     id 'maven-publish'
 }
 
@@ -9,8 +9,10 @@ android {
 
     defaultConfig {
         minSdk 24
+        targetSdk 34
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -31,6 +33,16 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
+}
+
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
 }
 
 publishing {
